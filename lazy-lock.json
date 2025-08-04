@@ -1,6 +1,7 @@
 {
   "LuaSnip": { "branch": "master", "commit": "458560534a73f7f8d7a11a146c801db00b081df0" },
   "VimBrazilConfig": { "branch": "mainline", "commit": "397075fb5129c6776e38d8eab72bf76f63cbea76" },
+  "amazonq": { "branch": "mainline", "commit": "f42c2283a86668cfb5e99916bf9d07bdaa556e7c" },
   "blink.cmp": { "branch": "main", "commit": "bae4bae0eedd1fa55f34b685862e94a222d5c6f8" },
   "catppuccin": { "branch": "main", "commit": "b313c962cf94416dc4b297ab517f47b0cd8272ad" },
   "conform.nvim": { "branch": "master", "commit": "973f3cb73887d510321653044791d7937c7ec0fa" },

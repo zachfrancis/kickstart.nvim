@@ -793,11 +793,26 @@ require('lazy').setup({
   -- In normal mode type `<space>sh` then write `lazy.nvim-plugin`
   -- you can continue same window with `<space>sr` which resumes last telescope search
 
+  -- Start AWS specific plugins
   { -- Brazil integration
     url = "ssh://git.amazon.com:2222/pkg/VimBrazilConfig",
     branch = "mainline",
     ft = "brazil-config",
   },
+
+  {
+    name = 'amazonq',
+    url = 'ssh://git.amazon.com/pkg/AmazonQNVim',
+    opts = {
+      ssoStartUrl = 'https://amzn.awsapps.com/start',
+      -- Note: It's normally not necessary to change default `lsp_server_cmd`.
+      -- lsp_server_cmd = {
+      --   'node',
+      --   vim.fn.stdpath('data') .. '/lazy/AmazonQNVim/language-server/build/aws-lsp-codewhisperer-token-binary.js',
+      --   '--stdio',
+      -- },
+    },
+}
 
 }, {
   ui = {
