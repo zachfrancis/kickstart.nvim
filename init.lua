@@ -1,11 +1,3 @@
---[[
-  Next, run AND READ `:help`.
-  This will open up a help window with some basic information
-  about reading, navigating and searching the builtin help documentation.
-
-  Use keymap "<space>sh" to [s]earch the [h]elp documentation,
---]]
-
 -- Set <space> as the leader key
 -- See `:help mapleader`
 --  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
@@ -21,6 +13,11 @@ vim.g.have_nerd_font = true
 -- Make line numbers default
 vim.o.number = true
 vim.o.relativenumber = true
+
+-- Defualt whitespace settings
+vim.o.tabstop = 2
+vim.o.shiftwidth = 2
+vim.o.expandtab = true
 
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.o.mouse = 'a'
