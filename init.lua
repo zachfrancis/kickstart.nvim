@@ -404,6 +404,8 @@ require('lazy').setup({
         lua = { 'stylua' },
         python = { 'isort', 'black' },
         javascript = { 'prettierd', 'prettier', stop_after_first = true },
+        html = { 'htmlbeautifier' },
+        css = { 'prettierd', 'prettier', stop_after_first = true },
       },
     },
   },
