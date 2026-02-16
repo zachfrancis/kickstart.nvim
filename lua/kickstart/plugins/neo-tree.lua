@@ -12,14 +12,22 @@ return {
   lazy = false,
   keys = {
     { '\\', ':Neotree reveal<CR>', desc = 'NeoTree reveal', silent = true },
+    { '<Leader>e', ':Neotree toggle<CR>', desc = 'NeoTree Toggle' },
   },
   opts = {
+    close_if_last_window = true,
     filesystem = {
       window = {
         mappings = {
           ['\\'] = 'close_window',
         },
       },
+    },
+    show_separator_on_edge = true,
+    separator = { left = '/', right = '\\' },
+    source_selector = {
+      winbar = true,
+      content_layout = 'center',
     },
   },
 }

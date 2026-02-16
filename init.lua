@@ -2,7 +2,7 @@
 -- See `:help mapleader`
 --  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
 vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
+vim.g.maplocalleader = ' 'buffe
 
 -- Set to true if you have a Nerd Font installed and selected in the terminal
 vim.g.have_nerd_font = true
@@ -418,11 +418,6 @@ require('lazy').setup({
       -- Snippet Engine
       {
         'L3MON4D3/LuaSnip',
-        version = '2.*',
-        build = (function()
-          if vim.fn.has 'win32' == 1 or vim.fn.executable 'make' == 0 then return end
-          return 'make install_jsregexp'
-        end)(),
         dependencies = {
           {
             'rafamadriz/friendly-snippets',
@@ -456,7 +451,7 @@ require('lazy').setup({
       },
 
       sources = {
-        default = { 'lsp', 'path', 'snippets' },
+        default = { 'lsp', 'path', 'snippets', 'buffer' },
       },
 
       snippets = { preset = 'luasnip' },
