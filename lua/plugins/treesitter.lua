@@ -1,26 +1,29 @@
 return {
-  { -- Highlight, edit, and navigate code
-    'nvim-treesitter/nvim-treesitter',
-    config = function()
-      local filetypes = {
-        'bash',
-        'c',
-        'diff',
-        'html',
-        'lua',
-        'luadoc',
+  'nvim-treesitter/nvim-treesitter',
+  build = ':TSUpdate',
+  config = function()
+    require('nvim-treesitter.install').prefer_git = true
+
+    require('nvim-treesitter.configs').setup {
+      ensure_installed = {
         'markdown',
-        'markdown_inline',
-        'query',
-        'vim',
-        'vimdoc',
-        'css',
-      }
-      require('nvim-treesitter').install(filetypes)
-      vim.api.nvim_create_autocmd('FileType', {
-        pattern = filetypes,
-        callback = function() vim.treesitter.start() end,
-      })
-    end,
-  },
+        'lua',
+        'typescript',
+        'javascript',
+        'tsx',
+      },
+      sync_install = false,
+      auto_install = true,
+      highlight = {
+        enable = true,
+        additional_vim_regex_highlighting = false,
+      },
+      indent = { enable = true },
+    }
+
+    -- Force git protocol instead of tar
+    for _, config in pairs(require('nvim-treesitter.parsers').get_parser_configs()) do
+      config.install_info.use_makefile = true
+    end
+  end,
 }
