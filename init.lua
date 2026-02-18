@@ -5,9 +5,9 @@ vim.g.maplocalleader = ' '
 -- Set to true if you have a Nerd Font installed and selected in the terminal
 vim.g.have_nerd_font = true
 
-require 'lua.keymaps'
-require 'lua.options'
-require 'lua.utils'
+require 'keymaps'
+require 'options'
+require 'utils'
 
 -- [[ Install `lazy.nvim` plugin manager ]]
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
