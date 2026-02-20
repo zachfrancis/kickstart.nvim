@@ -28,13 +28,8 @@ return {
     --- @type blink.cmp.Config
     opts = {
       keymap = {
-        -- All presets have the following mappings:
-        -- <tab>/<s-tab>: move to right/left of your snippet expansion
-        -- <c-space>: Open menu or open docs if already open
-        -- <c-n>/<c-p> or <up>/<down>: Select next/previous item
-        -- <c-e>: Hide menu
-        -- <c-k>: Toggle signature help
         preset = 'default',
+        ['<CR>'] = { 'accept', 'fallback' },
       },
 
       appearance = {
