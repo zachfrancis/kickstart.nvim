@@ -6,6 +6,7 @@ vim.g.maplocalleader = ' '
 vim.g.have_nerd_font = true
 
 require 'keymaps'
+require 'lsp'
 require 'options'
 require 'utils'
 
@@ -22,7 +23,9 @@ local rtp = vim.opt.rtp
 rtp:prepend(lazypath)
 
 -- [[ Configure and install plugins ]]
-require('lazy').setup({ { import = 'plugins' } }, {
+require('lazy').setup {
+  { import = 'plugins' },
+  { import = 'plugins.lsp' },
   ui = {
     icons = vim.g.have_nerd_font and {} or {
       cmd = '⌘',
@@ -40,4 +43,4 @@ require('lazy').setup({ { import = 'plugins' } }, {
       lazy = '💤 ',
     },
   },
-})
+}
