@@ -1,7 +1,7 @@
 return {
   { -- Autoformat
     'stevearc/conform.nvim',
-    event = { 'BufWritePre' },
+    event = { 'BufWritePre', 'BufNewFile' },
     cmd = { 'ConformInfo' },
     keys = {
       {
@@ -12,24 +12,19 @@ return {
       },
     },
     opts = {
-      notify_on_error = false,
-      format_on_save = function(bufnr)
-        local disable_filetypes = { c = true, cpp = true }
-        if disable_filetypes[vim.bo[bufnr].filetype] then
-          return nil
-        else
-          return {
-            timeout_ms = 500,
-            lsp_format = 'fallback',
-          }
-        end
-      end,
+      notify_on_error = true,
+      format_on_save = {
+        lsp_format = 'fallback',
+        timeout_ms = 500,
+      },
       formatters_by_ft = {
         lua = { 'stylua' },
-        python = { 'isort', 'black' },
         javascript = { 'prettierd', 'prettier', stop_after_first = true },
-        html = { 'htmlbeautifier' },
+        typescript = { 'prettierd', 'prettier', stop_after_first = true },
+        html = { 'prettierd', 'prettier', stop_after_first = true },
         css = { 'prettierd', 'prettier', stop_after_first = true },
+        markdown = { 'prettierd', 'prettier', stop_after_first = true },
+        python = { 'isort', 'black' },
       },
     },
   },

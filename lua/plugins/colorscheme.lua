@@ -8,20 +8,20 @@ return {
   -- Highlight todo, notes, etc in comments
   { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
 
-  {
-    'catgoose/nvim-colorizer.lua',
-    event = 'BufReadPre',
-    opts = {
-      filetypes = {
-        'css',
-        'javascript',
-      },
-      lazy_load = true,
-      user_default_options = {
-        css = true,
-        mode = 'virtualtext',
-        virtualtext_inline = true,
-      },
-    },
-  },
+  -- {
+  --   'catgoose/nvim-colorizer.lua',
+  --   event = 'BufReadPre',
+  --   opts = {
+  --     filetypes = {
+  --       'css',
+  --       'javascript',
+  --     },
+  --     lazy_load = true,
+  --     user_default_options = {
+  --       css = true,
+  --       mode = 'virtualtext',
+  --       virtualtext_inline = true,
+  --     },
+  --   },
+  -- },
 }

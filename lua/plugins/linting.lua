@@ -6,6 +6,8 @@ return {
       local lint = require 'lint'
 
       lint.linters_by_ft = {
+        javascript = { 'eslint_d' },
+        typescript = { 'eslint_d' },
         markdown = { 'markdownlint-cli2' },
         html = { 'markuplint' },
         css = { 'stylelint' },
@@ -19,6 +21,8 @@ return {
           if vim.bo.modifiable then lint.try_lint() end
         end,
       })
+
+      vim.keymap.set('n', '<leader>l', function() lint.try_lint() end, { desc = 'Try [L]inting for current buffer' })
     end,
   },
 }
